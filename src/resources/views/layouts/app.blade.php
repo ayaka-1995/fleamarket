@@ -12,8 +12,16 @@
         <div class="header">
             <h1 class="header__heading">
                 <a class="header__logo" href="/">
-                    <img src="img/logo.svg" alt="coachtech">
+                    <img src="{{ asset('img/logo.svg') }}" alt="coachtech">
                 </a>
+                <div class="header-input">
+                    <input class="search-bar" type="text" placeholder="なにをお探しですか？">
+                </div>
+                <div class="header-nav">
+                    <a href="#">ログイン</a>
+                    <a href="#">マイページ</a>
+                    <a href="#">出品</a>
+                </div>
                 @yield('link')
             </h1>
         </div>
