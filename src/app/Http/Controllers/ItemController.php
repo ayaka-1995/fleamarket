@@ -10,4 +10,9 @@ class ItemController extends Controller
     {
         return view('contact');
     }
+    public function myList()
+    {
+        $items = Item::where('user_id', Auth::id())->get();
+        return view('mylist', compact('items'));
+    }
 }

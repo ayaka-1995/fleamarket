@@ -1,0 +1,47 @@
+.login-container{
+    width: 680px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.login-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group{
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5555;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.register-link{
+    display: block;
+    margin-top: 10px;
+    color: #0073cc;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
