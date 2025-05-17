@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -29,3 +31,6 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+
+Route::get('/mypage', [MypageController::class, 'index'])->name('mypage');
+Route::get('/items/create', [ItemController::class, 'create'])->name('items.create');

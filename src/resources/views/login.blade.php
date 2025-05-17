@@ -24,11 +24,21 @@
             <div class="form-group">
                 <label class="email">メールアドレス</label>
                 <input class="form-control" type="email" name="email" value="{{ old('email') }}" required>
+                @error('email')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label class="password">パスワード</label>
                 <input class="form-control" type="password" name="password" required>
+                @error('password')
+                <div class="'invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <button class="btn-login" type="submit">ログイン</button>
             <a class="register-link" href="{{ route('register') }}">会員登録はこちら</a>

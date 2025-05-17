@@ -21,9 +21,9 @@
             </div>
             <div class="toppage-header-nav">
                 <nav>
-                    <a href="#">ログイン</a>
-                    <a href="#">マイページ</a>
-                    <a href="#">出品</a>
+                    <a href="{{ route('login') }}" class="btn-login-link">ログイン</a>
+                    <a href="{{ route('mypage') }}" class="btn-mypage-link">マイページ</a>
+                    <a href="{{ route('items.create') }}" class="btn-sell-link">出品</a>
                 </nav>
             </div>
             @yield('link')
