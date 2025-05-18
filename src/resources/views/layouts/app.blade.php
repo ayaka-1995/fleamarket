@@ -22,7 +22,7 @@
             <div class="toppage-header-nav">
                 <nav>
                     <a href="{{ route('login') }}" class="btn-login-link">ログイン</a>
-                    <a href="{{ route('mypage') }}" class="btn-mypage-link">マイページ</a>
+                    <a href="/?page=mylist" class="btn-mypage-link">マイページ</a>
                     <a href="{{ route('items.create') }}" class="btn-sell-link">出品</a>
                 </nav>
             </div>
