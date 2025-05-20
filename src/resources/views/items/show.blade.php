@@ -35,9 +35,9 @@
             <div class="comments">
                 //コメント一覧表示
             </div>
-            <h3>商品のコメント</h3>
+            <h3>商品へのコメント</h3>
             <textarea placeholder="ここにコメントを入力"></textarea>
-            <button class="comment-submit-btn">コメントを投稿する</button>
+            <button class="comment-submit-btn">コメントを送信する</button>
         </div>
 </div>
 @endsection
