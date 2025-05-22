@@ -4,6 +4,7 @@ use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ItemController::class, 'index']);
 //Route::get('/mylist', [ItemController::class, 'myList'])->middleware('auth')->name('mylist');
 Route::get('/', [ItemController::class, 'index'])->name('home');
 
@@ -33,6 +33,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/item/{item_id}', [ItemController::class, 'show'])->name('item.show');
 

@@ -4,6 +4,12 @@
 <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 @endsection
 
+@if (session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+
 @section('content')
 <div class="register-container">
     <h2 class="register-title">会員登録</h2>
@@ -12,14 +18,14 @@
             @csrf
             <div class="form-group">
                 <label class="form-label">ユーザー名</label>
-                <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" required>
+                <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}"required>
                 @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label class="form-label">メールアドレス</label>
-                <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" required>
+                <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}"required>
                 @error('email')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
