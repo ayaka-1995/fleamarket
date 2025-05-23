@@ -16,4 +16,9 @@ class Item extends Model
         'description',
         'user_id'
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\CommentController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +41,5 @@ Route::get('/item/{item_id}', [ItemController::class, 'show'])->name('item.show'
 
 Route::get('/mypage', [MypageController::class, 'index'])->name('mypage');
 Route::get('/items/create', [ItemController::class, 'create'])->name('items.create');
+
+Route::post('/items/{item}/comments', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');

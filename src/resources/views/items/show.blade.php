@@ -8,7 +8,7 @@
 <div class="item-detail-container">
     <div class="item-detail-header">
         <div class="item-image">
-            <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像">
+            <img src="{{ $item->image }}" alt="商品画像">
         </div>
         <div class="item-info">
             <h2>{{ $item->name }}</h2>
@@ -33,11 +33,22 @@
         <div class="item-comments">
             <h3>コメント</h3>
             <div class="comments">
-                //コメント一覧表示
+                @foreach($item->comments as $comment)
+                    <div class="comment">
+                        <p><strong>{{ $comment->user->name ?? '匿名' }}</strong></p>
+                        <p>{{ $comment->content }}</p>
+                    </div>
+                @endforeach
             </div>
+
+            @auth
             <h3>商品へのコメント</h3>
-            <textarea placeholder="ここにコメントを入力"></textarea>
-            <button class="comment-submit-btn">コメントを送信する</button>
+            <form action="{{ route('comments.store', $item->id) }}" method="POST">
+                @csrf
+                <textarea name="content" placeholder="ここにコメントを入力" required></textarea>
+                <button type="submit" class="comment-submit-btn">コメントを送信する</button>
+            </form>
+            @endauth
         </div>
 </div>
 @endsection
