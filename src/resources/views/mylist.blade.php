@@ -12,7 +12,10 @@
 </div>
 
 <div class="product-row">
-    @foreach($item as $item)
+    @if($items->isEmpty())
+        <p>マイリストに商品はありません</p>
+    @else
+    @foreach($items as $item)
     <div class="product-item">
         <div class="product-image">
             <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
@@ -20,6 +23,7 @@
         <div class="product-name">{{ $item->name }}</div>
     </div>
     @endforeach
+    @endif
 </div>
 
 @endsection

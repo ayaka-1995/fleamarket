@@ -21,7 +21,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)){
             //ログイン成功後、マイリストへリダイレクト
-            return redirect()->intended('/mylist');
+            return redirect()->intended('/?page=mylist');
         }
 
         //ログイン失敗時の処理

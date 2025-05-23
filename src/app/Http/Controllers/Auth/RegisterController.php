@@ -23,6 +23,12 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed']
+        ],[
+            'name.required' => 'お名前を入力してください',
+            'email.required' => 'メールアドレスを入力してください',
+            'password.required' =>'パスワードを入力してください',
+            'password.min' => 'パスワードパスワードは８文字以上で入力してください',
+            'password.confirmed' =>'パスワードと一致しません',
         ]);
 
     //ユーザーの作成処理

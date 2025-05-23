@@ -4,15 +4,27 @@
 <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 @endsection
 
-@if (session('success'))
-<div class="alert alert-success">
-    {{ session('success') }}
-</div>
-@endif
 
 @section('content')
 <div class="register-container">
     <h2 class="register-title">会員登録</h2>
+
+    @if (session('success'))
+    <div class="alert alert-success">
+    {{ session('success') }}
+    </div>
+    @endif
+
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    
     <div class="form">
         <form action="{{ route('register') }}" method="POST">
             @csrf

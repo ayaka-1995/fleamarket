@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/mylist', [ItemController::class, 'myList'])->middleware('auth')->name('mylist');
+Route::get('/mylist', [ItemController::class, 'myList'])->middleware('auth')->name('mylist');
+
 Route::get('/', [ItemController::class, 'index'])->name('home');
 
 Route::get('/login', function(){

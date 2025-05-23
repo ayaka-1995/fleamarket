@@ -47,6 +47,24 @@ body {
     background-color: #ffe6e6;
 }
 
+.alert-success{
+    background-color: #e0ffe0;
+    color: #006600;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #88cc88;
+    border-radius: 5px;
+}
+
+.alert-danger{
+    background-color: #ffe6e6;
+    color: #cc0000;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ffcccc;
+    border-radius: 5px;
+}
+
 .btn-register {
     width: 100%;
     padding: 15px;
