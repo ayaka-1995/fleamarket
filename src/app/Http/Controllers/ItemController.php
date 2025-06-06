@@ -38,6 +38,27 @@ class ItemController extends Controller
 
     public function create()
     {
-        return view('items.create'); //items/create.blade.phpを表示
+        return view('items.create'); 
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'image' => 'nullable|image',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('items', 'public');
+            $validated['image'] = $path;
+        }
+
+        $validated['user_id'] = Auth::id();
+        Item::create($validated);
+
+        return redirect()->route('home')->with('success', '商品を出品しました');
     }
 }

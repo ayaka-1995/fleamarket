@@ -45,6 +45,7 @@
             <h3>商品へのコメント</h3>
             <form action="{{ route('comments.store', $item->id) }}" method="POST">
                 @csrf
+                <input type="hidden" name="item_id" value="{{ $item->id }}">
                 <textarea name="content" placeholder="ここにコメントを入力" required></textarea>
                 <button type="submit" class="comment-submit-btn">コメントを送信する</button>
             </form>

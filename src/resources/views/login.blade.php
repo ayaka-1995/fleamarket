@@ -11,21 +11,18 @@
         <form action="{{ route('login') }}" method="POST">
             @csrf
 
-            @if($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            @if (session('status'))
+            <div class="error-text">
+                {{ session('status') }}
+            </div>
             @endif
-            
+
             <div class="form-group">
                 <label class="email">メールアドレス</label>
                 <input class="form-control" type="email" name="email" value="{{ old('email') }}" required>
+
                 @error('email')
-                <div class="invalid-feedback">
+                    <div class="invalid-feedback">
                     {{ $message }}
                 </div>
                 @enderror
@@ -35,7 +32,7 @@
                 <label class="password">パスワード</label>
                 <input class="form-control" type="password" name="password" required>
                 @error('password')
-                <div class="'invalid-feedback">
+                <div class="invalid-feedback">
                     {{ $message }}
                 </div>
                 @enderror

@@ -35,6 +35,10 @@
     margin-top: 20px;
 }
 
+.error-text {
+    color: red;
+    margin-bottom: 8px;
+}
 .btn-login {
     width: 100%;
     padding: 10px;
