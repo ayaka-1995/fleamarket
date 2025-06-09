@@ -1,0 +1,43 @@
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    font-family: Inter;
+}
+
+.profile-title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.profile-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #000;
+}
+
+.profile-container input[type="text"],
+.profile-container input[type="file"]{
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.alert-success{
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid ;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
