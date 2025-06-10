@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="profile-container">
-    <h2>プロフィール設定</h2>
+    <h2 class="profile-title">プロフィール設定</h2>
 
     {{-- -成功のメッセージの表示 --}}
     @if (session('success'))
@@ -14,11 +14,11 @@
     @endif
 
     {{-- プロフィール画像表示と選択 --}}
-    <div class="image-upload-area">
-        @if ($user->profile_image)
-            <img src="{{ asset('storage/profile_images/' . $user->profile_image) }}" alt="プロフィール画像" class="profile-image-preview">
+    <div class="profile-image-row">
+        @if ($user->image_path)
+            <img src="{{ asset('storage/' . $user->image_path) }}" class="profile-image" alt="プロフィール画像">
         @else
-            <div class="profile-image-placeholder"></div>
+            <div class="profile-placeholder"></div>
         @endif
 
         <label for="profile_image" class="select-image-button">画像を選択する</label>
@@ -32,7 +32,7 @@
 
         {{-- -ユーザー名 --}}
         <div class="mb-3">
-            <label for="name" class="form-laravel">ユーザー名</label>
+            <label for="name" class="form-label">ユーザー名</label>
             <input type="text" name="name" class="form-control" value="{{ old('name', $user->name) }}">
         </div>
 
@@ -50,10 +50,10 @@
 
         {{-- -建物名 --}}
         <div class="mb-3">
-            <label for="building" class="form-label">建物名(任意)</label>
+            <label for="building" class="form-label">建物名</label>
             <input type="text" name="building" class="form-control" value="{{ old('building',$user->building) }}">
         </div>
-        
+
         <button type="submit" class="btn btn-primary">更新する</button>
 
     </form>
