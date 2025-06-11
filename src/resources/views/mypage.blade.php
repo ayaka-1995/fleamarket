@@ -11,7 +11,7 @@
         <div class="user-info">
             <h2 class="user-name">ユーザー名</h2>
         </div>
-            <a href="#" class="edit-profile-btn">プロフィールを編集</a>
+            <a href="{{ route('profile.edit') }}" class="edit-profile-btn">プロフィールを編集</a>
     </div>
 
     <div class="tabs">

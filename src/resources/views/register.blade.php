@@ -24,7 +24,7 @@
             </ul>
         </div>
     @endif
-    
+
     <div class="form">
         <form action="{{ route('register') }}" method="POST">
             @csrf
@@ -57,7 +57,7 @@
                 @enderror
             </div>
 
-            <button class="btn-register" type="submit">登録する</button>
+            <a class="btn-register" href="{{ route('profile.edit') }}">登録する</a>
             <a class="login-link" href="{{ route('login') }}">ログインはこちら</a>
         </form>
     </div>

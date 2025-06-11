@@ -16,7 +16,7 @@
     {{-- プロフィール画像表示と選択 --}}
     <div class="profile-image-row">
         @if ($user->image_path)
-            <img src="{{ asset('storage/' . $user->image_path) }}" class="profile-image" alt="プロフィール画像">
+            <img src="{{ asset('storage/profile_images/' . $user->image_path) }}" class="profile-image" alt="プロフィール画像">
         @else
             <div class="profile-placeholder"></div>
         @endif

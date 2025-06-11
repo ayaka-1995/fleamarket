@@ -32,7 +32,7 @@ class ProfileController extends Controller
 
         if($request->hasFile('profile_image')){
             $path = $request->file('profile_image')->store('public/profile_images');
-            $user->profile_image = basename($path);
+            $user->image_path = basename($path);
         }
 
         $user->save();

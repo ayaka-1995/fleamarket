@@ -41,6 +41,7 @@ class RegisterController extends Controller
         //ログインさせたい場合
         //Auth::attempt($request->only('email', 'password'));
 
-        return redirect('/login')->with('success','会員登録が完了しました');
+        //return redirect('/login')->with('success','会員登録が完了しました');
+        return redirect()->route('profile.edit');
     }
 }
