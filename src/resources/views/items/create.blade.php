@@ -20,13 +20,15 @@
             </div>
         </div>
 
+        <h3 class="section-title">商品の詳細</h3>
+
         <div class="form-group">
             <label>カテゴリー</label>
             <div class="category-buttons">
                 @php
                     $categories = [
-                    'ファッション', '家電', 'インテリア', 'レディース', 'メンズ', 'コスメ', 
-                    '本', 'ゲーム', 'スポーツ', 'キッチン', 'ハンドメイド', 
+                    'ファッション', '家電', 'インテリア', 'レディース', 'メンズ', 'コスメ',
+                    '本', 'ゲーム', 'スポーツ', 'キッチン', 'ハンドメイド',
                     'アクセサリー', 'おもちゃ', 'ベビー・キッズ'
                     ];
                 @endphp
@@ -37,6 +39,20 @@
                 @endforeach
             </div>
         </div>
+
+        <div class="form-group">
+            <label>商品状態</label>
+            <select name="condition" required>
+                <option value="">選択してください</option>
+                <option value="新品">新品</option>
+                <option value="未使用に近い">未使用に近い</option>
+                <option value="目立った傷や汚れなし">目立った傷や汚れなし</option>
+                <option value="やや傷や汚れあり">やや傷や汚れあり</option>
+                <option value="傷や汚れあり">傷や汚れあり</option>
+            </select>
+        </div>
+
+        <h3 class="section-title">商品名と説明</h3>
 
         <div class="form-group">
             <label>商品名</label>
@@ -55,9 +71,11 @@
 
         <div class="form-group">
             <label>販売価格</label>
-            <input type="number" name="price" required>
+            <div class="price-input">
+                <span class="yen">¥</span>
+                <input type="text" name="price"required>
+            </div>
         </div>
-        
         <button type="submit" class="submit-btn">出品する</button>
     </form>
 </div>

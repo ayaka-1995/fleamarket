@@ -59,6 +59,6 @@ class ItemController extends Controller
         $validated['user_id'] = Auth::id();
         Item::create($validated);
 
-        return redirect()->route('home')->with('success', '商品を出品しました');
+        return redirect()->route('mylist')->with('success', '商品を出品しました');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddProfilesFieldsToUsersTable extends Migration
+class AddUserIdToItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -33,16 +33,8 @@ class AddProfilesFieldsToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            if (Schema::hasColumn('users', 'postal_code')) {
-                $table->dropColumn('postal_code');
-            }
-            if (Schema::hasColumn('users', 'address')) {
-                $table->dropColumn('address');
-            }
-            if (Schema::hasColumn('users', 'building')) {
-                $table->dropColumn('building');
-            }
+        Schema::table('items', function (Blueprint $table) {
+            //
         });
     }
 }

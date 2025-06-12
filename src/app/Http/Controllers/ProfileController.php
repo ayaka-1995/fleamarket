@@ -37,7 +37,7 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('profile.edit')->with('success','プロフィールを更新しました');
+        return redirect('/?page=mylist')->with('success','プロフィールを更新しました');
 
     }
 }
